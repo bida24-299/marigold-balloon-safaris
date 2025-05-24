@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style 1.css">
+   <title>Marigold Balloon Safaris</title> 
+   </head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+      <img src="images/marigold ballon safari logo.png" alt="Marigold logo"/>
+      </div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <nav class="nav-links">
+          <a href="index.html">HOME</a>
+          <a href="why fly with us.html">WHY FLY WITH US</a>
+          <a href="offers.html">OFFERS</a>
+          <a href="camps and lodges.html">CAMPS & LODGES</a>
+          <a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+              <h1 style="font-size: 30px;padding-top: 70px; color: #ffae42;">Our Camps & Lodges</h1>
+          
+            <p style="text-align: center;">Experience the wild in comfort and style</p>
+        </div>
+    </section>
+
+    <!-- Lodges Grid -->
+    <section class="lodges-grid">
+        <div class="lodge-card">
+            <img src="images/image 5.webp" alt="Serengeti Lodge">
+            <h3>Lilly Under Canvas</h3>
+            <p>Mobile tented camps following the Great Migration</p>
+            <a href="#" class="btn">Explore</a>
+        </div>
+        <div class="lodge-card">
+            <img src="images/image 51.webp" alt="Tarangire Lodge">
+            <h3>Oliver's Camp</h3>
+            <p>Intimate safari experience in Golden City</p>
+            <a href="#" class="btn">Explore</a>
+        </div>
+        <div class="lodge-card">
+            <img src="images/image 52.webp" alt="Tarangire Lodge">
+            <h3>Peony Hills</h3>
+            <p>Peony Hills provides the ideal haven from which to venture into the Golden City Forest</p>
+            <a href="#" class="btn">Explore</a>
+        </div>
+        <div class="lodge-card">
+            <img src="images/image 53.jpg" alt="Tarangire Lodge">
+            <h3>Hibiscus Private House</h3>
+            <p>Hibiscus Private House offers an elegant home-away-from-home safari experience, where flexibility and privacy combine to create an exclusive safari adventure.</p>
+            <a href="#" class="btn">Explore</a>
+        </div>
+
+        <!-- More lodge cards -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <h4>Marigold Ballon Safaris</h4>
+        </div>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script >
+      // Mobile Menu Toggle
+document.querySelector('.burger-menu').addEventListener('click', function() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Smooth Scrolling for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Image Lazy Loading (if needed)
+const lazyImages = document.querySelectorAll('img[data-src]');
+const lazyLoad = (img) => {
+    img.setAttribute('src', img.getAttribute('data-src'));
+    img.onload = () => img.removeAttribute('data-src');
+};
+
+const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            lazyLoad(entry.target);
+            imageObserver.unobserve(entry.target);
+        }
+    });
+});
+
+lazyImages.forEach(img => imageObserver.observe(img));
+    </script>
+    <script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+</body>
+</html>

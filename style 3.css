@@ -1,0 +1,310 @@
+body{font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+
+h1{
+   font-size: 30px;
+            padding-top:  35px; ;
+            margin-bottom: 20px;
+            font-weight: 300;
+            text-align: center;
+            color: #ffae42;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+     padding: 0px 10px;
+    background-color:#d3cabe ;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar {
+     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+.logo img{
+    height: 80px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex: 1;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Add these styles to your existing CSS */
+
+/* Hamburger Menu Styles */
+.hamburger {
+  padding: 15px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  display: none; /* Hidden by default on desktop */
+}
+
+.hamburger-box {
+  width: 30px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.1s 0.2s ease-in-out;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  position: absolute;
+  content: '';
+  left: 0;
+  transition: transform 0.2s 0.2s ease-in-out;
+} 
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  top: 8px;
+}
+
+/* Active state for hamburger */
+.hamburger.active .hamburger-inner {
+  background-color: transparent;
+}
+
+.hamburger.active .hamburger-inner::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-inner::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+    z-index: 1001; /* Above the nav links */
+  }
+  
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #d3cabe;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    transform: translateY(-100%);
+    padding-top: 100px; /* Space for logo */
+  }
+  
+  .nav-links.active {
+    display: flex;
+    transform: translateY(0);
+  }
+  
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 10px 0;
+  }
+  
+  /* Adjust logo position when menu is open */
+  .navbar.active .logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1002;
+  }
+}
+
+
+/* Why Choose Us Section */
+        .why-choose-us {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h1 {
+             font-size: 30px;
+            font-size: 36px;
+            color: #ffae42;
+            margin-bottom: 15px;
+            padding-bottom: 0px;
+            
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #d4a762;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 50px;
+            color: #d4a762;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f1f1f1;
+            padding: 80px 5%;
+            text-align: center;
+        }
+        
+        .testimonial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-slide {
+            padding: 30px;
+        }
+        
+        .testimonial-text {
+            font-size: 20px;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #d4a762;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background-color: #faa61a;
+            color: white;
+            padding: 60px 5%;
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #ffb347;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #222;
+        }
+
+        /* Footer */
+.footer {
+    background: #222;
+    color: white;
+    padding: 40px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #ccc;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }

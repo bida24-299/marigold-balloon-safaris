@@ -1,0 +1,87 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <title>Marigold Balloon Safaris</title> 
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/marigold ballon safari logo.png" alt="Marigold logo"/>
+    </div>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="why fly with us.html">WHY FLY WITH US</a>
+      <a href="offers.html">OFFERS</a>
+      <a href="camps and lodges.html">CAMPS & LODGES</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+  <h1 style="text-align: center;">Welcome to Marigold Ballon Safaris</h1>
+
+  <div class="content-container">
+    <div class="left-container">
+      <div class="slideshow">
+        <div class="slide active"><img src="images/image 1.jpg" alt="Hot air balloon over landscape"></div>
+        <div class="slide"><img src="images/image 2.webp" alt="Balloon safari view"></div>
+        <div class="slide"><img src="images/image 3.jpg" alt="Wildlife from balloon"></div>
+      </div>
+    </div>
+    <div class="right-container">
+      <h4>
+        Marigold Balloon safaris offers balloon safaris over the iconic Golden Delta, a vast inland delta which floods during the winter season, supplying wildlife with a much-needed water supply, and creating one of Asia's greatest concentrations of wildlife.
+        Marigold Ballon safaris operates in the north western part of the Golden city, over an area flooded with water and winding channels, dotted with islands, and large expanses of woodland forests. A rich diversity of wildlife can be seen from the balloon, as this age-old adventure explores the Golden Delta in a completely unique way, offering a 360-degree panoramic view from tree top level to a thousand feet in the air.
+      </h4>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo">
+      <h4>Marigold Ballon Safaris</h4>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // Slideshow functionality
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 3000);
+
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.setAttribute('aria-expanded', 
+        hamburger.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
